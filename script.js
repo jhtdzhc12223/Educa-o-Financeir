@@ -1,34 +1,76 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const book = document.getElementById('book');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const pages = document.querySelectorAll('.page');
-    let currentPage = 1;
-    const totalPages = pages.length;
+    const capa = document.querySelector('.capa');
+    const paginas = document.querySelectorAll('.pagina:not(.frente)');
+    const btnAnterior = document.getElementById('anterior');
+    const btnProximo = document.getElementById('proximo');
+    const indicador = document.getElementById('indicador');
     
-    function showPage(pageNumber) {
-        pages.forEach(page => page.style.display = 'none');
-        document.getElementById(`page${pageNumber}`).style.display = 'block';
-    }
+    let paginaAtual = 1;
+    const totalPaginas = paginas.length + 1; // Incluindo a capa
     
-    function turnPage(direction) {
-        book.classList.add('turning');
+    // Função para atualizar a exibição
+    function atualizarPagina(direcao) {
+        // Animação da capa (só na primeira virada)
+        if (paginaAtual === 1 && direcao === 'proximo') {
+            capa.classList.add('virada');
+            setTimeout(() => {
+                capa.style.display = 'none';
+                document.getElementById('pagina1').classList.add('visivel');
+            }, 600);
+        } else if (paginaAtual === 2 && direcao === 'anterior') {
+            capa.style.display = 'flex';
+            setTimeout(() => {
+                capa.classList.remove('virada');
+                document.getElementById('pagina1').classList.remove('visivel');
+            }, 50);
+        }
         
-        setTimeout(() => {
-            if (direction === 'next' && currentPage < totalPages) {
-                currentPage++;
-            } else if (direction === 'prev' && currentPage > 1) {
-                currentPage--;
-            }
+        // Animação das páginas internas
+        if (paginaAtual > 1 && paginaAtual < totalPaginas) {
+            const paginaAtualElement = document.getElementById(`pagina${paginaAtual}`);
+            paginaAtualElement.classList.remove('visivel');
             
-            showPage(currentPage);
-            book.classList.remove('turning');
-        }, 500);
+            setTimeout(() => {
+                if (direcao === 'proximo' && paginaAtual < totalPaginas - 1) {
+                    document.getElementById(`pagina${paginaAtual + 1}`).classList.add('visivel');
+                } else if (direcao === 'anterior' && paginaAtual > 2) {
+                    document.getElementById(`pagina${paginaAtual - 1}`).classList.add('visivel');
+                }
+            }, 300);
+        }
+        
+        // Atualizar indicador
+        if (direcao === 'proximo' && paginaAtual < totalPaginas) {
+            paginaAtual++;
+        } else if (direcao === 'anterior' && paginaAtual > 1) {
+            paginaAtual--;
+        }
+        
+        indicador.textContent = `Página ${Math.max(1, paginaAtual - 1)} de ${totalPaginas - 1}`;
+        
+        // Controlar visibilidade dos botões
+        btnAnterior.style.visibility = paginaAtual > 2 ? 'visible' : 'hidden';
+        btnProximo.style.visibility = paginaAtual < totalPaginas ? 'visible' : 'hidden';
     }
     
-    prevBtn.addEventListener('click', () => turnPage('prev'));
-    nextBtn.addEventListener('click', () => turnPage('next'));
+    // Event listeners
+    btnProximo.addEventListener('click', () => atualizarPagina('proximo'));
+    btnAnterior.addEventListener('click', () => atualizarPagina('anterior'));
     
-    // Inicializa mostrando a primeira página
-    showPage(1);
+    // Inicialização
+    btnAnterior.style.visibility = 'hidden';
+    indicador.textContent = `Página 1 de ${totalPaginas - 1}`;
+    
+    // Suporte para teclado
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') {
+            if (paginaAtual < totalPaginas) {
+                atualizarPagina('proximo');
+            }
+        } else if (e.key === 'ArrowLeft') {
+            if (paginaAtual > 1) {
+                atualizarPagina('anterior');
+            }
+        }
+    });
 });
