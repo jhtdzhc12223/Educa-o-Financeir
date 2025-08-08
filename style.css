@@ -1,90 +1,273 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const flipbook = document.getElementById('flipbook');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    const currentPageSpan = document.getElementById('current-page');
-    const totalPagesSpan = document.getElementById('total-pages');
-    
-    // Páginas do flipbook (capa + 5 páginas + contracapa)
-    const pages = [
-        'cover', 'page1', 'page2', 'page3', 'page4', 'page5', 'back-cover'
-    ];
-    
-    let currentPageIndex = 0;
-    const totalPages = pages.length;
-    totalPagesSpan.textContent = totalPages - 1; // Excluindo a capa na contagem
-    
-    // Atualiza a exibição da página atual
-    function updatePage() {
-        // Oculta todas as páginas
-        pages.forEach(pageId => {
-            document.getElementById(pageId).style.display = 'none';
-        });
-        
-        // Exibe a página atual
-        document.getElementById(pages[currentPageIndex]).style.display = 'flex';
-        currentPageSpan.textContent = Math.max(1, currentPageIndex);
-        
-        // Atualiza estado dos botões
-        prevBtn.disabled = currentPageIndex === 0;
-        nextBtn.disabled = currentPageIndex === totalPages - 1;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a2a6c, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+h1 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    color: #f8f9fa;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.flipbook-container {
+    width: 100%;
+    max-width: 900px;
+    height: 600px;
+    perspective: 2000px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.flipbook {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.42, 0, 0.58, 1);
+    transform-origin: left center;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.page-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.page h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.page p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.page ul {
+    padding-left: 30px;
+    margin-bottom: 25px;
+}
+
+.page li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* Capa */
+.cover {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.cover h1 {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.cover .subtitle {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.school-info {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 40px;
+    font-size: 1.2rem;
+}
+
+.authors {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.instruction {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Contracapa */
+.back-cover {
+    background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+    color: white;
+}
+
+.back-cover h3 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+.back-cover p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.closing {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Controles */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.nav-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.nav-btn:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.page-indicator {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+}
+
+/* Efeito de virada */
+.flipbook.flipping {
+    transform: rotateY(-180deg);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .flipbook-container {
+        height: 500px;
     }
     
-    // Anima a virada de página
-    function flipPage(direction) {
-        // Adiciona a classe de animação
-        flipbook.classList.add('flipping');
-        
-        setTimeout(() => {
-            // Atualiza a página atual
-            if (direction === 'next' && currentPageIndex < totalPages - 1) {
-                currentPageIndex++;
-            } else if (direction === 'prev' && currentPageIndex > 0) {
-                currentPageIndex--;
-            }
-            
-            // Atualiza a exibição
-            updatePage();
-            
-            // Remove a classe de animação
-            flipbook.classList.remove('flipping');
-        }, 500);
+    .cover h1 {
+        font-size: 2.5rem;
     }
     
-    // Event listeners para os botões
-    prevBtn.addEventListener('click', () => flipPage('prev'));
-    nextBtn.addEventListener('click', () => flipPage('next'));
+    .page-content {
+        padding: 30px;
+    }
     
-    // Navegação por teclado
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft' && currentPageIndex > 0) {
-            flipPage('prev');
-        } else if (e.key === 'ArrowRight' && currentPageIndex < totalPages - 1) {
-            flipPage('next');
-        }
-    });
+    .page h2 {
+        font-size: 1.6rem;
+    }
     
-    // Navegação por toque (swipe)
-    let touchStartX = 0;
+    .nav-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .flipbook-container {
+        height: 400px;
+    }
     
-    flipbook.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-    }, false);
+    h1 {
+        font-size: 2.2rem;
+    }
     
-    flipbook.addEventListener('touchend', function(e) {
-        const touchEndX = e.changedTouches[0].screenX;
-        const diff = touchEndX - touchStartX;
-        
-        // Verifica se o movimento foi significativo
-        if (Math.abs(diff) > 50) {
-            if (diff < 0 && currentPageIndex < totalPages - 1) {
-                flipPage('next'); // Swipe para esquerda
-            } else if (diff > 0 && currentPageIndex > 0) {
-                flipPage('prev'); // Swipe para direita
-            }
-        }
-    }, false);
+    .cover h1 {
+        font-size: 2rem;
+    }
     
-    // Inicializa o flipbook
-    updatePage();
-});
+    .page-content {
+        padding: 20px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
