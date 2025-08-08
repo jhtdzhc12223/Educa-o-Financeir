@@ -3,119 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educação Financeira Essencial</title>
-    <link rel="stylesheet" href="./estilo.css">
+    <title>Educação Financeira - Flipbook Interativo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="livro">
-            <div class="capa">
-                <div class="titulo-capa">
-                    <h1>A Importância da</h1>
-                    <h2>Educação Financeira</h2>
-                    <p>Nos Dias Atuais</p>
+    <header>
+        <h1>Educação Financeira</h1>
+        <p class="subtitle">Flipbook interativo com animação de virar página</p>
+    </header>
+    
+    <div class="flipbook-container">
+        <div class="flipbook" id="flipbook">
+            <!-- Capa -->
+            <div class="page cover" id="cover">
+                <h1>A Importância da Educação Financeira</h1>
+                <p class="subtitle">Nos Dias de Hoje</p>
+                
+                <div class="school-info">
+                    <p>Colégio Vicente Rijo</p>
+                    <p>Projeto de Educação Financeira</p>
                 </div>
-                <div class="autores">
+                
+                <div class="authors">
                     <p>Gabriel Alves, Paulo, Vitor</p>
+                </div>
+                
+                <p class="instruction">Clique em "Próxima Página" para começar</p>
+            </div>
+            
+            <!-- Página 1: Introdução -->
+            <div class="page" id="page1">
+                <div class="page-content">
+                    <h2>Introdução</h2>
+                    <p>A educação financeira tornou-se uma competência essencial no mundo moderno. Em uma era de consumo acelerado, crédito fácil e complexidade dos produtos financeiros, saber gerenciar recursos tornou-se tão importante quanto saber ler e escrever.</p>
+                    
+                    <p>Este livro explora a jornada da educação financeira no Brasil, seu impacto na vida dos estudantes e sua importância fundamental para a construção de uma sociedade mais equilibrada e economicamente sustentável.</p>
+                    
+                    <p>Ao longo das páginas, você descobrirá como pequenas mudanças na forma como lidamos com o dinheiro podem transformar completamente nosso futuro financeiro e contribuir para o desenvolvimento do país.</p>
                 </div>
             </div>
             
-            <div class="paginas">
-                <!-- Página 1 -->
-                <div class="pagina frente" id="pagina1">
-                    <div class="conteudo">
-                        <h3>Colégio Vicente Rijo</h3>
-                        <h4>Projeto de Educação Financeira</h4>
-                        <div class="texto-inicial">
-                            <p>Este livro explora os fundamentos e a relevância da educação financeira na formação de cidadãos conscientes e economicamente estáveis.</p>
-                        </div>
-                    </div>
+            <!-- Página 2: Sumário -->
+            <div class="page" id="page2">
+                <div class="page-content">
+                    <h2>Sumário</h2>
+                    
+                    <ul>
+                        <li>Origens da Educação Financeira no Brasil</li>
+                        <li>Impacto nos Estudantes</li>
+                        <li>Importância para a Sociedade</li>
+                        <li>Desafios e Oportunidades</li>
+                        <li>Conclusão: O Futuro Financeiro</li>
+                    </ul>
                 </div>
-                
-                <!-- Página 2 -->
-                <div class="pagina" id="pagina2">
-                    <div class="conteudo">
-                        <h3>Sumário</h3>
-                        <ul class="sumario">
-                            <li>1. Origens da Educação Financeira</li>
-                            <li>2. Impacto no Comportamento</li>
-                            <li>3. Benefícios Sociais</li>
-                            <li>4. Aplicações Práticas</li>
-                        </ul>
-                    </div>
+            </div>
+            
+            <!-- Página 3: Origens -->
+            <div class="page" id="page3">
+                <div class="page-content">
+                    <h2>Origens da Educação Financeira no Brasil</h2>
+                    <p>A educação financeira no Brasil ganhou força com a criação da Estratégia Nacional de Educação Financeira (ENEF) em 2010, uma iniciativa do governo federal em parceria com órgãos reguladores do sistema financeiro.</p>
+                    
+                    <p>O impulso definitivo veio com a inclusão da educação financeira como tema transversal na Base Nacional Comum Curricular (BNCC) em 2018, tornando obrigatório o ensino de conceitos financeiros em todas as escolas do país.</p>
+                    
+                    <p>Essa decisão histórica transformou o Brasil em um dos poucos países do mundo a incluir formalmente a educação financeira no currículo escolar obrigatório, reconhecendo seu papel fundamental na formação de cidadãos conscientes.</p>
                 </div>
-                
-                <!-- Página 3 -->
-                <div class="pagina" id="pagina3">
-                    <div class="conteudo">
-                        <h3>1. Origens da Educação Financeira</h3>
-                        <p>A educação financeira surgiu como resposta às crises econômicas e ao endividamento crescente da população. No Brasil, ganhou força com a Estratégia Nacional de Educação Financeira (ENEF) em 2010.</p>
-                        <p>Seu objetivo principal é capacitar indivíduos para tomar decisões financeiras conscientes, promovendo o bem-estar econômico pessoal e coletivo.</p>
-                    </div>
+            </div>
+            
+            <!-- Página 4: Impacto nos Estudantes -->
+            <div class="page" id="page4">
+                <div class="page-content">
+                    <h2>Impacto nos Estudantes</h2>
+                    <p>Pesquisas recentes demonstram que estudantes com acesso à educação financeira apresentam:</p>
+                    
+                    <ul>
+                        <li>30% mais propensão a poupar regularmente</li>
+                        <li>40% menos endividamento precoce</li>
+                        <li>Maior compreensão de juros e financiamentos</li>
+                        <li>Melhor planejamento para metas de curto e longo prazo</li>
+                    </ul>
+                    
+                    <p>Além dos benefícios quantitativos, observa-se também o desenvolvimento de habilidades socioemocionais importantes como:</p>
+                    
+                    <ul>
+                        <li>Pensamento crítico sobre consumo</li>
+                        <li>Responsabilidade financeira</li>
+                        <li>Resiliência econômica</li>
+                        <li>Visão de futuro</li>
+                    </ul>
                 </div>
-                
-                <!-- Página 4 -->
-                <div class="pagina" id="pagina4">
-                    <div class="conteudo">
-                        <h3>2. Impacto no Comportamento</h3>
-                        <p>Estudos demonstram que pessoas com educação financeira:</p>
-                        <ul>
-                            <li>Economizam 25% mais que a média</li>
-                            <li>Possuem menor índice de inadimplência</li>
-                            <li>Fazem planejamento a longo prazo</li>
-                            <li>Compreendem melhor produtos financeiros</li>
-                        </ul>
-                    </div>
+            </div>
+            
+            <!-- Página 5: Importância para a Sociedade -->
+            <div class="page" id="page5">
+                <div class="page-content">
+                    <h2>Importância para a Sociedade</h2>
+                    <p>A educação financeira em escala nacional produz impactos profundos na sociedade:</p>
+                    
+                    <ul>
+                        <li><strong>Redução das desigualdades:</strong> Capacita indivíduos de todas as classes sociais a fazerem melhores escolhas financeiras</li>
+                        <li><strong>Economia mais estável:</strong> Menos inadimplência e maior poupança interna</li>
+                        <li><strong>Cidadania ativa:</strong> População mais consciente de seus direitos financeiros</li>
+                        <li><strong>Empreendedorismo:</strong> Melhor preparo para iniciar e gerir negócios</li>
+                    </ul>
+                    
+                    <p>Estudos do Banco Mundial indicam que países com programas nacionais de educação financeira apresentam crescimento econômico mais sustentável e menor vulnerabilidade a crises financeiras.</p>
                 </div>
-                
-                <!-- Página 5 -->
-                <div class="pagina" id="pagina5">
-                    <div class="conteudo">
-                        <h3>3. Benefícios Sociais</h3>
-                        <p>Uma sociedade financeiramente educada:</p>
-                        <ul>
-                            <li>Reduz desigualdades econômicas</li>
-                            <li>Estimula o crescimento sustentável</li>
-                            <li>Diminui a vulnerabilidade a fraudes</li>
-                            <li>Promove empreendedorismo consciente</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Página 6 -->
-                <div class="pagina" id="pagina6">
-                    <div class="conteudo">
-                        <h3>4. Aplicações Práticas</h3>
-                        <p>Conceitos essenciais para o dia a dia:</p>
-                        <ul>
-                            <li>Orçamento pessoal</li>
-                            <li>Gestão de dívidas</li>
-                            <li>Investimentos básicos</li>
-                            <li>Previdência privada</li>
-                            <li>Consumo consciente</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Contracapa -->
-                <div class="pagina final">
-                    <div class="conteudo">
-                        <div class="encerramento">
-                            <p>Projeto desenvolvido para o Colégio Vicente Rijo</p>
-                            <p>Ano Letivo 2023</p>
-                        </div>
+            </div>
+            
+            <!-- Contracapa -->
+            <div class="page cover back-cover" id="back-cover">
+                <div class="cover-content">
+                    <h3>Conclusão</h3>
+                    <p>A educação financeira deixou de ser um luxo para se tornar uma necessidade básica na formação dos jovens. Seu impacto vai além do indivíduo, criando bases para uma sociedade mais próspera e igualitária.</p>
+                    
+                    <div class="closing">
+                        <p>Projeto desenvolvido por:</p>
+                        <p>Gabriel Alves, Paulo, Vitor</p>
+                        <p>Colégio Vicente Rijo - 2023</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <div class="controls">
+        <button id="prev-btn" class="nav-btn">
+            <span>←</span> Página Anterior
+        </button>
         
-        <div class="controles">
-            <button id="anterior" class="botao-nav">← Anterior</button>
-            <span id="indicador">Página 1 de 6</span>
-            <button id="proximo" class="botao-nav">Próximo →</button>
+        <div class="page-indicator">
+            <span id="current-page">1</span> de <span id="total-pages">6</span>
         </div>
+        
+        <button id="next-btn" class="nav-btn">
+            Próxima Página <span>→</span>
+        </button>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
