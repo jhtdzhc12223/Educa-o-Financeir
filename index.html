@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educação Financeira - Flipbook Interativo</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -16,19 +16,28 @@
         <div class="flipbook" id="flipbook">
             <!-- Capa -->
             <div class="page cover" id="cover">
-                <h1>A Importância da Educação Financeira</h1>
-                <p class="subtitle">Nos Dias de Hoje</p>
-                
-                <div class="school-info">
-                    <p>Colégio Vicente Rijo</p>
-                    <p>Projeto de Educação Financeira</p>
+                <div class="cover-design">
+                    <div class="cover-title">
+                        <h1>A Importância da Educação Financeira</h1>
+                        <p class="subtitle">Nos Dias de Hoje</p>
+                    </div>
+                    
+                    <div class="cover-graphic">
+                        <div class="coin"></div>
+                        <div class="graph"></div>
+                    </div>
+                    
+                    <div class="school-info">
+                        <p>Colégio Vicente Rijo</p>
+                        <p>Projeto de Educação Financeira</p>
+                    </div>
+                    
+                    <div class="authors">
+                        <p>Gabriel Alves, Paulo, Vitor</p>
+                    </div>
+                    
+                    <p class="instruction">Clique em "Próxima Página" para começar</p>
                 </div>
-                
-                <div class="authors">
-                    <p>Gabriel Alves, Paulo, Vitor</p>
-                </div>
-                
-                <p class="instruction">Clique em "Próxima Página" para começar</p>
             </div>
             
             <!-- Página 1: Introdução -->
@@ -40,6 +49,8 @@
                     <p>Este livro explora a jornada da educação financeira no Brasil, seu impacto na vida dos estudantes e sua importância fundamental para a construção de uma sociedade mais equilibrada e economicamente sustentável.</p>
                     
                     <p>Ao longo das páginas, você descobrirá como pequenas mudanças na forma como lidamos com o dinheiro podem transformar completamente nosso futuro financeiro e contribuir para o desenvolvimento do país.</p>
+                    
+                    <div class="page-icon">💡</div>
                 </div>
             </div>
             
@@ -49,12 +60,14 @@
                     <h2>Sumário</h2>
                     
                     <ul>
-                        <li>Origens da Educação Financeira no Brasil</li>
-                        <li>Impacto nos Estudantes</li>
-                        <li>Importância para a Sociedade</li>
-                        <li>Desafios e Oportunidades</li>
-                        <li>Conclusão: O Futuro Financeiro</li>
+                        <li><span class="list-icon">📘</span> Origens da Educação Financeira no Brasil</li>
+                        <li><span class="list-icon">🎓</span> Impacto nos Estudantes</li>
+                        <li><span class="list-icon">🏛️</span> Importância para a Sociedade</li>
+                        <li><span class="list-icon">🚧</span> Desafios e Oportunidades</li>
+                        <li><span class="list-icon">🔮</span> Conclusão: O Futuro Financeiro</li>
                     </ul>
+                    
+                    <div class="page-icon">📋</div>
                 </div>
             </div>
             
@@ -67,6 +80,8 @@
                     <p>O impulso definitivo veio com a inclusão da educação financeira como tema transversal na Base Nacional Comum Curricular (BNCC) em 2018, tornando obrigatório o ensino de conceitos financeiros em todas as escolas do país.</p>
                     
                     <p>Essa decisão histórica transformou o Brasil em um dos poucos países do mundo a incluir formalmente a educação financeira no currículo escolar obrigatório, reconhecendo seu papel fundamental na formação de cidadãos conscientes.</p>
+                    
+                    <div class="page-icon">📊</div>
                 </div>
             </div>
             
@@ -91,6 +106,8 @@
                         <li>Resiliência econômica</li>
                         <li>Visão de futuro</li>
                     </ul>
+                    
+                    <div class="page-icon">📈</div>
                 </div>
             </div>
             
@@ -108,6 +125,8 @@
                     </ul>
                     
                     <p>Estudos do Banco Mundial indicam que países com programas nacionais de educação financeira apresentam crescimento econômico mais sustentável e menor vulnerabilidade a crises financeiras.</p>
+                    
+                    <div class="page-icon">🌍</div>
                 </div>
             </div>
             
@@ -127,6 +146,12 @@
         </div>
     </div>
     
+    <div class="progress-container">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+        </div>
+    </div>
+    
     <div class="controls">
         <button id="prev-btn" class="nav-btn">
             <span>←</span> Página Anterior
@@ -141,6 +166,6 @@
         </button>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
