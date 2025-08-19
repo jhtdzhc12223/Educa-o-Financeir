@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.getElementById('next-btn');
     const currentPageSpan = document.getElementById('current-page');
     const totalPagesSpan = document.getElementById('total-pages');
-    const progressFill = document.getElementById('progress-fill');
     
     const pages = [
         'cover', 'page1', 'page2', 'page3', 'page4', 'page5', 'back-cover'
@@ -21,10 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById(pages[currentPageIndex]).style.display = 'flex';
         currentPageSpan.textContent = Math.max(1, currentPageIndex);
-        
-        // Atualizar a barra de progresso
-        const progress = (currentPageIndex / (totalPages - 1)) * 100;
-        progressFill.style.width = `${progress}%`;
         
         prevBtn.disabled = currentPageIndex === 0;
         nextBtn.disabled = currentPageIndex === totalPages - 1;
