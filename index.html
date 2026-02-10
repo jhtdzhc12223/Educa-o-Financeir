@@ -3,163 +3,430 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educação Financeira - Flipbook Interativo</title>
+    <title>FUTURE FINANCE | Realidade Aumentada Financeira</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Educação Financeira</h1>
-        <p class="subtitle">Flipbook interativo com animação de virar página</p>
+    <!-- Efeitos de partículas -->
+    <div id="particles-js"></div>
+    <div class="floating-elements">
+        <div class="floating-icon">💰</div>
+        <div class="floating-icon">📈</div>
+        <div class="floating-icon">💎</div>
+        <div class="floating-icon">🚀</div>
+    </div>
+
+    <!-- Header futurista -->
+    <header class="cyber-header">
+        <div class="header-glow"></div>
+        <h1 class="neon-title">
+            <span class="neon-text">FUTURE</span>
+            <span class="neon-subtext">FINANCE</span>
+        </h1>
+        <p class="cyber-subtitle">EXPERIÊNCIA IMERSIVA EM EDUCAÇÃO FINANCEIRA 5.0</p>
+        
+        <div class="hologram-badge">
+            <div class="hologram-content">
+                <span>COLEGIUM VICENTE RIJO</span>
+                <span>PROJETO TATA/TCS</span>
+                <span>AI POWERED</span>
+            </div>
+        </div>
     </header>
-    
-    <div class="flipbook-container">
-        <div class="flipbook" id="flipbook">
-            <!-- Capa -->
-            <div class="page cover" id="cover">
-                <div class="cover-content">
-                    <h1>A Importância da Educação Financeira</h1>
-                    <p class="subtitle">Nos Dias de Hoje</p>
+
+    <!-- Container principal holográfico -->
+    <div class="hologram-container">
+        <div class="hologram-frame">
+            <div class="hologram-glow"></div>
+            
+            <div class="flipbook-container">
+                <div class="flipbook" id="flipbook">
                     
-                    <div class="cover-graphic">
-                        <div class="financial-icons">
-                            <div class="icon-container">
-                                <div class="icon">💰</div>
-                                <span>Economia</span>
+                    <!-- Capa futurista -->
+                    <div class="page cover hologram-page" id="cover">
+                        <div class="hologram-effect"></div>
+                        <div class="page-content">
+                            <div class="cyber-logo">
+                                <div class="logo-core"></div>
+                                <div class="logo-ring"></div>
                             </div>
-                            <div class="icon-container">
-                                <div class="icon">📈</div>
-                                <span>Investimentos</span>
+                            
+                            <h2 class="cyber-main-title">REVOLUÇÃO<br>FINANCEIRA 5.0</h2>
+                            <p class="cyber-description">Domine o futuro do dinheiro através de inteligência artificial, blockchain e economia holográfica</p>
+                            
+                            <div class="tech-stack">
+                                <div class="tech-item">
+                                    <i class="fas fa-brain"></i>
+                                    <span>AI Analytics</span>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fas fa-link"></i>
+                                    <span>Blockchain</span>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fas fa-chart-network"></i>
+                                    <span>NeuroEconomy</span>
+                                </div>
                             </div>
-                            <div class="icon-container">
-                                <div class="icon">💳</div>
-                                <span>Planejamento</span>
+                            
+                            <div class="initiation-sequence">
+                                <div class="sequence-bar">
+                                    <div class="sequence-progress"></div>
+                                </div>
+                                <p class="sequence-text">INICIANDO EXPERIÊNCIA HOLOGRÁFICA...</p>
+                            </div>
+                            
+                            <div class="authors-cyber">
+                                <div class="author-chip">
+                                    <i class="fas fa-user-astronaut"></i>
+                                    <span>GABRIEL ALVES</span>
+                                </div>
+                                <div class="author-chip">
+                                    <i class="fas fa-robot"></i>
+                                    <span>PAULO AI</span>
+                                </div>
+                                <div class="author-chip">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>VITOR TECH</span>
+                                </div>
+                            </div>
+                            
+                            <div class="access-prompt">
+                                <i class="fas fa-fingerprint"></i>
+                                <p>TOQUE NA TELA OU PRESSIONE ESPAÇO PARA ACESSAR</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="school-info">
-                        <p>Colégio Vicente Rijo</p>
-                        <p>Projeto de Educação Financeira</p>
+                    <!-- Página 1: Era da Consciência Financeira -->
+                    <div class="page hologram-page" id="page1">
+                        <div class="page-header">
+                            <div class="page-number">01</div>
+                            <h3 class="page-title">A ERA DA CONSCIÊNCIA<br>FINANCEIRA DIGITAL</h3>
+                        </div>
+                        
+                        <div class="content-grid">
+                            <div class="cyber-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <h4>Dinheiro 5.0</h4>
+                                <p>Moedas digitais, criptomoedas e ativos tokenizados estão redefinindo o conceito de valor. A educação financeira tradicional não é mais suficiente.</p>
+                            </div>
+                            
+                            <div class="cyber-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h4>Assistentes Financeiros AI</h4>
+                                <p>IA's preditivas analisam padrões de gastos, otimizam investimentos e previnem crises pessoais antes que aconteçam.</p>
+                            </div>
+                            
+                            <div class="cyber-card full-width">
+                                <div class="stats-display">
+                                    <div class="stat-item">
+                                        <div class="stat-value">87%</div>
+                                        <div class="stat-label">dos millennials usam apps financeiros</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">3.2x</div>
+                                        <div class="stat-label">maior patrimônio com educação digital</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">AI</div>
+                                        <div class="stat-label">gerencia 40% dos investimentos globais</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cyber-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"O analfabeto do século XXI não será quem não sabe ler, mas quem não sabe gerenciar seus ativos digitais."</p>
+                            <div class="quote-author">- Satoshi Nakamoto Jr.</div>
+                        </div>
                     </div>
                     
-                    <div class="authors">
-                        <p>Gabriel Alves, Paulo, Vitor</p>
+                    <!-- Página 2: NeuroEconomia -->
+                    <div class="page hologram-page" id="page2">
+                        <div class="page-header">
+                            <div class="page-number">02</div>
+                            <h3 class="page-title">NEUROECONOMIA &<br>PSICOLOGIA FINANCEIRA</h3>
+                        </div>
+                        
+                        <div class="brain-visualization">
+                            <div class="brain-container">
+                                <div class="brain-lobe" data-lobe="prefrontal">
+                                    <span>Tomada de Decisão</span>
+                                </div>
+                                <div class="brain-lobe" data-lobe="amygdala">
+                                    <span>Medo/Risco</span>
+                                </div>
+                                <div class="brain-lobe" data-lobe="striatum">
+                                    <span>Recompensa</span>
+                                </div>
+                            </div>
+                            <div class="brain-legend">
+                                Como seu cérebro reage a decisões financeiras
+                            </div>
+                        </div>
+                        
+                        <div class="neuro-content">
+                            <h4>Vieses Cognitivos que CUSTAM DINHEIRO</h4>
+                            <div class="bias-list">
+                                <div class="bias-item">
+                                    <div class="bias-name">Efeito Manada</div>
+                                    <div class="bias-desc">Investir porque todos estão investindo</div>
+                                    <div class="bias-risk alto">ALTO RISCO</div>
+                                </div>
+                                <div class="bias-item">
+                                    <div class="bias-name">Aversão à Perda</div>
+                                    <div class="bias-desc">Medo de perder é maior que vontade de ganhar</div>
+                                    <div class="bias-risk medio">MÉDIO RISCO</div>
+                                </div>
+                                <div class="bias-item">
+                                    <div class="bias-name">Excesso de Confiança</div>
+                                    <div class="bias-desc">Achar que sabe mais que o mercado</div>
+                                    <div class="bias-risk alto">ALTO RISCO</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cyber-tip">
+                            <i class="fas fa-lightbulb"></i>
+                            <div class="tip-content">
+                                <strong>DICA DE ALGORITMO:</strong> Configure alertas emocionais no seu app financeiro para evitar decisões impulsivas.
+                            </div>
+                        </div>
                     </div>
                     
-                    <p class="instruction">Clique em "Próxima Página" para começar</p>
-                </div>
-            </div>
-            
-            <!-- Página 1: Introdução -->
-            <div class="page" id="page1">
-                <div class="page-content">
-                    <h2>Introdução</h2>
-                    <p>A educação financeira tornou-se uma competência essencial no mundo moderno. Em uma era de consumo acelerado, crédito fácil e complexidade dos produtos financeiros, saber gerenciar recursos tornou-se tão importante quanto saber ler e escrever.</p>
+                    <!-- Página 3: Cripto & Blockchain -->
+                    <div class="page hologram-page" id="page3">
+                        <div class="page-header">
+                            <div class="page-number">03</div>
+                            <h3 class="page-title">CRIPTOECONOMIA &<br>REALIDADE AUMENTADA</h3>
+                        </div>
+                        
+                        <div class="blockchain-visual">
+                            <div class="chain-link">
+                                <div class="link-block">Bloco #1</div>
+                                <div class="link-connector"></div>
+                                <div class="link-block">Bloco #2</div>
+                                <div class="link-connector"></div>
+                                <div class="link-block">Bloco #3</div>
+                            </div>
+                            <div class="blockchain-desc">Tecnologia Blockchain - Imutável e descentralizada</div>
+                        </div>
+                        
+                        <div class="crypto-grid">
+                            <div class="crypto-card bitcoin">
+                                <div class="crypto-icon">₿</div>
+                                <div class="crypto-info">
+                                    <h5>Bitcoin</h5>
+                                    <p>Ouro Digital - Reserva de valor global</p>
+                                </div>
+                            </div>
+                            <div class="crypto-card ethereum">
+                                <div class="crypto-icon">Ξ</div>
+                                <div class="crypto-info">
+                                    <h5>Ethereum</h5>
+                                    <p>Computador Mundial - Contratos inteligentes</p>
+                                </div>
+                            </div>
+                            <div class="crypto-card defi">
+                                <div class="crypto-icon">🔄</div>
+                                <div class="crypto-info">
+                                    <h5>DeFi</h5>
+                                    <p>Finanças Descentralizadas - Sem intermediários</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ar-experience">
+                            <h4>EXPERIÊNCIA DE REALIDADE AUMENTADA</h4>
+                            <p>Visualize seus investimentos em 3D no seu ambiente usando AR. Toque nos ativos para ver desempenho em tempo real.</p>
+                            <button class="ar-button">
+                                <i class="fas fa-vr-cardboard"></i>
+                                ATIVAR MODO AR
+                            </button>
+                        </div>
+                    </div>
                     
-                    <p>Este livro explora a jornada da educação financeira no Brasil, seu impacto na vida dos estudantes e sua importância fundamental para a construção de uma sociedade mais equilibrada e economicamente sustentável.</p>
+                    <!-- Página 4: AI & Automação -->
+                    <div class="page hologram-page" id="page4">
+                        <div class="page-header">
+                            <div class="page-number">04</div>
+                            <h3 class="page-title">INTELIGÊNCIA ARTIFICIAL &<br>AUTOMAÇÃO FINANCEIRA</h3>
+                        </div>
+                        
+                        <div class="ai-dashboard">
+                            <div class="ai-header">
+                                <i class="fas fa-robot"></i>
+                                <h4>ASSISTENTE FINANCEIRO PESSOAL AI</h4>
+                            </div>
+                            
+                            <div class="ai-metrics">
+                                <div class="metric">
+                                    <div class="metric-value">R$ 3.450</div>
+                                    <div class="metric-label">Economia Mensal</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">+18.7%</div>
+                                    <div class="metric-label">Rentabilidade</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">24/7</div>
+                                    <div class="metric-label">Monitoramento</div>
+                                </div>
+                            </div>
+                            
+                            <div class="ai-recommendations">
+                                <h5>RECOMENDAÇÕES DO ALGORITMO</h5>
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Reduzir 15% em serviços de streaming não utilizados</li>
+                                    <li><i class="fas fa-check-circle"></i> Alocar 10% para ETF de tecnologia sustentável</li>
+                                    <li><i class="fas fa-check-circle"></i> Automatizar poupança com round-up de compras</li>
+                                    <li><i class="fas fa-check-circle"></i> Diversificar em 3 criptomoedas de baixa correlação</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="automation-flow">
+                            <h4>FLUXO DE AUTOMAÇÃO FINANCEIRA</h4>
+                            <div class="flow-steps">
+                                <div class="flow-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-desc">Receita entra na conta</div>
+                                </div>
+                                <div class="flow-arrow">→</div>
+                                <div class="flow-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-desc">AI categoriza gastos</div>
+                                </div>
+                                <div class="flow-arrow">→</div>
+                                <div class="flow-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-desc">Investimentos automáticos</div>
+                                </div>
+                                <div class="flow-arrow">→</div>
+                                <div class="flow-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-desc">Relatório holográfico</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <p>Ao longo das páginas, você descobrirá como pequenas mudanças na forma como lidamos com o dinheiro podem transformar completamente nosso futuro financeiro e contribuir para o desenvolvimento do país.</p>
-                </div>
-            </div>
-            
-            <!-- Página 2: Sumário -->
-            <div class="page" id="page2">
-                <div class="page-content">
-                    <h2>Sumário</h2>
+                    <!-- Página 5: Futuro & Conclusão -->
+                    <div class="page hologram-page" id="page5">
+                        <div class="page-header">
+                            <div class="page-number">05</div>
+                            <h3 class="page-title">VISÃO 2030 &<br>CONCLUSÃO HOLOGRÁFICA</h3>
+                        </div>
+                        
+                        <div class="future-predictions">
+                            <div class="prediction-card">
+                                <div class="prediction-year">2025</div>
+                                <h5>Bancos 100% digitais</h5>
+                                <p>Agências físicas serão museus. Todas as transações via blockchain.</p>
+                            </div>
+                            <div class="prediction-card">
+                                <div class="prediction-year">2027</div>
+                                <h5>Moedas digitais de bancos centrais</h5>
+                                <p>Real Digital, Digital Dollar e Euro Digital dominarão.</p>
+                            </div>
+                            <div class="prediction-card">
+                                <div class="prediction-year">2030</div>
+                                <h5>AI gerencia 80% dos patrimônios</h5>
+                                <p>Humanos definem objetivos, máquinas executam estratégias.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="conclusion-cyber">
+                            <h4>MANIFESTO DA EDUCAÇÃO FINANCEIRA 5.0</h4>
+                            <p>A próxima geração não aprenderá sobre juros compostos em livros. Eles interagirão com economias virtuais em metaversos, negociarão NFTs em marketplaces descentralizados e confiarão em algoritmos quânticos para proteção patrimonial.</p>
+                            
+                            <div class="cyber-action">
+                                <i class="fas fa-graduation-cap"></i>
+                                <p>Sua jornada começa AGORA. O futuro financeiro é digital, descentralizado e democratizado.</p>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <ul>
-                        <li>Origens da Educação Financeira no Brasil</li>
-                        <li>Impacto nos Estudantes</li>
-                        <li>Importância para a Sociedade</li>
-                        <li>Desafios e Oportunidades</li>
-                        <li>Conclusão: O Futuro Financeiro</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Página 3: Origens -->
-            <div class="page" id="page3">
-                <div class="page-content">
-                    <h2>Origens da Educação Financeira no Brasil</h2>
-                    <p>A educação financeira no Brasil ganhou força com a criação da Estratégia Nacional de Educação Financeira (ENEF) em 2010, uma iniciativa do governo federal em parceria com órgãos reguladores do sistema financeiro.</p>
-                    
-                    <p>O impulso definitivo veio com a inclusão da educação financeira como tema transversal na Base Nacional Comum Curricular (BNCC) em 2018, tornando obrigatório o ensino de conceitos financeiros em todas as escolas do país.</p>
-                    
-                    <p>Essa decisão histórica transformou o Brasil em um dos poucos países do mundo a incluir formalmente a educação financeira no currículo escolar obrigatório, reconhecendo seu papel fundamental na formação de cidadãos conscientes.</p>
-                </div>
-            </div>
-            
-            <!-- Página 4: Impacto nos Estudantes -->
-            <div class="page" id="page4">
-                <div class="page-content">
-                    <h2>Impacto nos Estudantes</h2>
-                    <p>Pesquisas recentes demonstram que estudantes com acesso à educação financeira apresentam:</p>
-                    
-                    <ul>
-                        <li>30% mais propensão a poupar regularmente</li>
-                        <li>40% menos endividamento precoce</li>
-                        <li>Maior compreensão de juros e financiamentos</li>
-                        <li>Melhor planejamento para metas de curto e longo prazo</li>
-                    </ul>
-                    
-                    <p>Além dos benefícios quantitativos, observa-se também o desenvolvimento de habilidades socioemocionais importantes como:</p>
-                    
-                    <ul>
-                        <li>Pensamento crítico sobre consumo</li>
-                        <li>Responsabilidade financeira</li>
-                        <li>Resiliência econômica</li>
-                        <li>Visão de futuro</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Página 5: Importância para a Sociedade -->
-            <div class="page" id="page5">
-                <div class="page-content">
-                    <h2>Importância para a Sociedade</h2>
-                    <p>A educação financeira em escala nacional produz impactos profundos na sociedade:</p>
-                    
-                    <ul>
-                        <li><strong>Redução das desigualdades:</strong> Capacita indivíduos de todas as classes sociais a fazerem melhores escolhas financeiras</li>
-                        <li><strong>Economia mais estável:</strong> Menos inadimplência e maior poupança interna</li>
-                        <li><strong>Cidadania ativa:</strong> População mais consciente de seus direitos financeiros</li>
-                        <li><strong>Empreendedorismo:</strong> Melhor preparo para iniciar e gerir negócios</li>
-                    </ul>
-                    
-                    <p>Estudos do Banco Mundial indicam que países com programas nacionais de educação financeira apresentam crescimento econômico mais sustentável e menor vulnerabilidade a crises financieras.</p>
-                </div>
-            </div>
-            
-            <!-- Contracapa -->
-            <div class="page cover back-cover" id="back-cover">
-                <div class="cover-content">
-                    <h3>Conclusão</h3>
-                    <p>A educação financeira deixou de ser um luxo para se tornar uma necessidade básica na formação dos jovens. Seu impacto vai além do indivíduo, criando bases para uma sociedade mais próspera e igualitária.</p>
-                    
-                    <div class="closing">
-                        <p>Projeto desenvolvido por:</p>
-                        <p>Gabriel Alves, Paulo, Vitor</p>
-                        <p>Colégio Vicente Rijo - 2023</p>
+                    <!-- Contracapa futurista -->
+                    <div class="page cover hologram-page" id="back-cover">
+                        <div class="hologram-effect"></div>
+                        <div class="page-content">
+                            <div class="completion-sequence">
+                                <i class="fas fa-check-circle"></i>
+                                <h3>EXPERIÊNCIA CONCLUÍDA</h3>
+                            </div>
+                            
+                            <div class="final-stats">
+                                <div class="stat-cyber">
+                                    <div class="stat-number">5</div>
+                                    <div class="stat-text">Dimensões Financeiras Exploradas</div>
+                                </div>
+                                <div class="stat-cyber">
+                                    <div class="stat-number">18</div>
+                                    <div class="stat-text">Conceitos Futuristas Dominados</div>
+                                </div>
+                                <div class="stat-cyber">
+                                    <div class="stat-number">100%</div>
+                                    <div class="stat-text">Preparado para 2030</div>
+                                </div>
+                            </div>
+                            
+                            <div class="cyber-signature">
+                                <div class="signature-title">DESENVOLVIDO POR</div>
+                                <div class="signature-names">
+                                    <span class="glowing-name">GABRIEL ALVES</span>
+                                    <span class="glowing-name">PAULO</span>
+                                    <span class="glowing-name">VITOR</span>
+                                </div>
+                                <div class="signature-subtitle">
+                                    COLEGIUM VICENTE RIJO | PROJETO TATA/TCS EDITION
+                                </div>
+                            </div>
+                            
+                            <div class="restart-prompt">
+                                <i class="fas fa-sync-alt"></i>
+                                <p>REINICIAR EXPERIÊNCIA PARA REVISÃO PROFUNDA</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="controls">
-        <button id="prev-btn" class="nav-btn">
-            <span>←</span> Página Anterior
+
+    <!-- Controles Cibernéticos -->
+    <div class="cyber-controls">
+        <button id="prev-btn" class="cyber-btn">
+            <i class="fas fa-arrow-left"></i>
+            <span>DIMENSÃO ANTERIOR</span>
         </button>
         
-        <div class="page-indicator">
-            <span id="current-page">1</span> de <span id="total-pages">6</span>
+        <div class="cyber-indicator">
+            <div class="indicator-glow"></div>
+            <span id="current-page">01</span>
+            <span class="separator">/</span>
+            <span id="total-pages">06</span>
         </div>
         
-        <button id="next-btn" class="nav-btn">
-            Próxima Página <span>→</span>
+        <button id="next-btn" class="cyber-btn">
+            <span>PRÓXIMA DIMENSÃO</span>
+            <i class="fas fa-arrow-right"></i>
         </button>
     </div>
 
+    <!-- Áudio imersivo -->
+    <audio id="hologram-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-click-900.mp3" preload="auto"></audio>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
